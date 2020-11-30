@@ -6,11 +6,7 @@ import boto3
 import datetime as dt
 import numpy as np
 
-os.environ["PSQL_HOSTNAME"] = "172.31.27.255"
-os.environ["PSQL_DATABASE"] = "warehouse"
-os.environ["PSQL_PORT"] = "5439"
-os.environ["PSQL_USER"] = "amine"
-os.environ["PSQL_PASS"] = "7V1tk<Cbx;Bd^PS5;*fD"
+
 
 connection = connect_to_dwh.PSQL()
 

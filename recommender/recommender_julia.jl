@@ -4,9 +4,9 @@ using DataFrames
 using Dates
 
 function connect()
-    conn = LibPQ.Connection("""host = 172.31.27.255
+    conn = LibPQ.Connection("""host = xxxxxx
                 port = 5439 user='amine'
-                password='7V1tk<Cbx;Bd^PS5;*fD'
+                password='xxxxx'
                 sslmode = 'require'
                 dbname =warehouse""";
                 options=Dict{String, String}())
