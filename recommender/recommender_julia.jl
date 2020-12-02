@@ -6,7 +6,7 @@ using Dates
 function connect()
     conn = LibPQ.Connection("""host = xxxxxx
                 port = 5439 user='amine'
-                password='xxxxx'
+                password='xxxxxxxx'
                 sslmode = 'require'
                 dbname =warehouse""";
                 options=Dict{String, String}())
@@ -69,9 +69,9 @@ end_date = "2020-11-02";
 country = "DE";
 city = "Berlin";
 
-data = get_data(start_date, end_date, country, city )
-widedata = treat_data(data)
+@time data = get_data(start_date, end_date, country, city )
+@time widedata = treat_data(data)
 
 ranking = "hotsorting"
-ranked_data = create_rankings(widedata, ranking) 
+@time ranked_data = create_rankings(widedata, ranking) 
 

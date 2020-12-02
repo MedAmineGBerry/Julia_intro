@@ -1,12 +1,11 @@
 import os
 import pandas as pd
 from datetime import datetime
-import utilities.connect_to_dwh as connect_to_dwh
+import Recommender.utilities.connect_to_dwh as connect_to_dwh
 import boto3
 import datetime as dt
 import numpy as np
-
-
+import time
 
 connection = connect_to_dwh.PSQL()
 
@@ -74,10 +73,21 @@ end_date = '2020-11-02'
 country = 'DE'
 city = 'Berlin'
 
+start = time.time()
 data = get_data(start_date, end_date, country, city )
+end = time.time()
+print("1st function" ,end - start)
+
+start = time.time()
 widedata = treat_data(data)
+end = time.time()
+print("2nd function" ,end - start)
 ranking ='jodel'
+
+start = time.time()
 ranked_data = create_rankings(widedata,ranking)
+end = time.time()
+print("3nd function" ,end - start)
 
 
 
