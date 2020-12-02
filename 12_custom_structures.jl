@@ -1,6 +1,3 @@
-a::B # means "a must be of type B"
-A<:B # means "A must be a subtype of B".
-
 mutable struct MyOwnType
     property1
     property2::String

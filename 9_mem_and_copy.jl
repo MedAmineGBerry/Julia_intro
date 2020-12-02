@@ -17,6 +17,9 @@ deepcopy(x)
 
 # == for equality
 # === to see if two objects are same
+ #= given a = [1, 2]; b = [1, 2];, a == b and a === a are true, but a === b is false;
+  given a = (1, 2); b = (1, 2);,  all a == b, a === a anda === bare true.=#
+
 rand() #random from 0 to 1 
 rand(a:b) #random number in a and b 
 rand(a:0.01:b) #random with a precision to second digit
@@ -25,6 +28,7 @@ using Pkg; Pkg.add("Distributions")
 import Distributions: Uniform 
 rand(Uniform()) #with more pecision
 rand(Uniform(a,b),2,3) #2x3 matrix
+
 #=nothing (type Nothing): is the value returned by code blocks
  and functions which do not return anything.
  It is a single instance of the singleton type Nothing, 
