@@ -58,7 +58,7 @@ function create_rankings(widedata, ranking)
     else
         println("Please enter a valid ranking")
     end
-    widedata = filter(:ranking => x -> !any(f -> f(x), (ismissing, isnothing, isnan,isinf)), widedata)
+    widedata = filter(:ranking => x -> !any(f -> f(x), (ismissing, isnothing, isnan, isinf)), widedata)
     sort!(widedata, [:ranking],rev=true)
     widedata
 end
